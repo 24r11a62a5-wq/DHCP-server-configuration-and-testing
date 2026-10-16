@@ -1,0 +1,25 @@
+# Sample ISC dhcpd-style configuration (reference)
+# Use this with isc-dhcp-server / Kea after adapting paths.
+
+default-lease-time 3600;
+max-lease-time 7200;
+authoritative;
+
+subnet 192.168.100.0 netmask 255.255.255.0 {
+  range 192.168.100.50 192.168.100.150;
+  option routers 192.168.100.1;
+  option subnet-mask 255.255.255.0;
+  option domain-name-servers 8.8.8.8, 8.8.4.4;
+  option domain-name "lab.local";
+  option broadcast-address 192.168.100.255;
+}
+
+host reserved-pc1 {
+  hardware ethernet aa:bb:cc:dd:ee:01;
+  fixed-address 192.168.100.10;
+}
+
+host reserved-pc2 {
+  hardware ethernet aa:bb:cc:dd:ee:02;
+  fixed-address 192.168.100.11;
+}

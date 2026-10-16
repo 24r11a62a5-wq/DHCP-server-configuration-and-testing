@@ -1,0 +1,23 @@
+{
+  "server": {
+    "interface_ip": "192.168.100.1",
+    "listen_port": 67,
+    "lab_port": 6767,
+    "lab_mode": true
+  },
+  "subnet": {
+    "network": "192.168.100.0",
+    "netmask": "255.255.255.0",
+    "broadcast": "192.168.100.255",
+    "pool_start": "192.168.100.50",
+    "pool_end": "192.168.100.150",
+    "gateway": "192.168.100.1",
+    "dns_servers": ["8.8.8.8", "8.8.4.4"],
+    "domain_name": "lab.local",
+    "lease_time_seconds": 3600
+  },
+  "reservations": {
+    "aa:bb:cc:dd:ee:01": "192.168.100.10",
+    "aa:bb:cc:dd:ee:02": "192.168.100.11"
+  }
+}
